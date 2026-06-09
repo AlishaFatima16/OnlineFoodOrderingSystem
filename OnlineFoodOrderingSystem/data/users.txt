@@ -1,0 +1,11 @@
+ALISHAAA,123,Alisha Fatima,03001234567,customer
+admin,admin123,Admin User,03009999999,admin
+alishaq,123,,,customer
+alisha,4545,,,customer
+alishas,123,,,customer
+alishad,123,,,customer
+FATIMA,123,,,customer
+SARA,234,,,customer
+ALISHAAAD,134,,,customerALISHA,245,,,customer
+ALISHAQ,245,,,customer
+ALISHA,4545,,,customer

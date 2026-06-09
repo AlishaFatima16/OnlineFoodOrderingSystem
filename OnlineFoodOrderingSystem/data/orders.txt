@@ -1,0 +1,42 @@
+---ORDER---
+customer=alishad
+date=2026-06-05 18:00:51
+ITEM,Zinger Burger,1,350
+ITEM,Margherita Pizza,1,700
+TOTAL,1050.00
+---END---
+
+---ORDER---
+customer=FATIMA
+date=2026-06-05 18:02:30
+ITEM,Zinger Burger,1,350
+ITEM,Margherita Pizza,1,700
+ITEM,Cold Coffee,1,200
+TOTAL,1250.00
+---END---
+
+---ORDER---
+customer=SARA
+date=2026-06-05 18:06:00
+ITEM,BBQ Chicken Burger,1,480
+ITEM,Beef Fried Rice,1,550
+TOTAL,1030.00
+---END---
+
+---ORDER---
+customer=ALISHAAAD
+date=2026-06-05 18:15:16
+ITEM,Zinger Burger,1,350
+TOTAL,350.00
+---END---
+
+---ORDER---
+customer=ALISHA
+date=2026-06-09 19:31:35
+ITEM,Zinger Burger,4,350
+ITEM,BBQ Chicken Burger,1,480
+ITEM,BBQ Chicken Pizza,1,900
+ITEM,Beef Fried Rice,1,550
+TOTAL,3330.00
+---END---
+

@@ -1,0 +1,26 @@
+1,Zinger Burger,350,Burgers
+2,Double Smash Burger,550,Burgers
+3,BBQ Chicken Burger,480,Burgers
+4,Crispy Chicken Burger,420,Burgers
+5,Margherita Pizza,700,Pizza
+6,BBQ Chicken Pizza,900,Pizza
+7,Pepperoni Pizza,850,Pizza
+8,Vegetable Pizza,750,Pizza
+9,Chicken Karahi,950,Desi
+10,Mutton Biryani,700,Desi
+11,Beef Nihari,850,Desi
+12,Daal Makhani,450,Desi
+13,Chicken Fried Rice,500,Rice
+14,Vegetable Fried Rice,380,Rice
+15,Beef Fried Rice,550,Rice
+16,Mango Shake,220,Drinks
+17,Strawberry Smoothie,250,Drinks
+18,Lemon Iced Tea,180,Drinks
+19,Cold Coffee,200,Drinks
+20,French Fries,250,Snacks
+21,Chicken Nuggets,350,Snacks
+22,Samosa (4pcs),150,Snacks
+23,Spring Rolls,200,Snacks
+24,Family Deal Burger,1200,Specials,15,Save 15%
+25,Pizza Combo Deal,1500,Specials,20,Mega 20% Off
+26,Student Meal Deal,800,Specials,10,Student 10% Off

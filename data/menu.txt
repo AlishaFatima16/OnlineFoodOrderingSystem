@@ -1,0 +1,26 @@
+1,Spicy Chicken Burger,350,Burgers
+2,Classic Beef Burger,400,Burgers
+3,Crispy Zinger,280,Burgers
+4,Double Smash Burger,550,Burgers
+5,Lahori Pizza,600,Pizza
+6,BBQ Chicken Pizza,700,Pizza
+7,Margherita Pizza,500,Pizza
+8,Chicken Fajita Pizza,750,Pizza
+9,Chicken Biryani,350,Desi
+10,Beef Nihari,400,Desi
+11,Chicken Karahi,450,Desi
+12,Daal Makhni,200,Desi
+13,Steamed Rice,150,Rice
+14,Chicken Fried Rice,280,Rice
+15,Vegetable Pulao,200,Rice
+16,Cold Coffee,200,Drinks
+17,Mango Shake,180,Drinks
+18,Doodh Pati Chai,60,Drinks
+19,Fresh Orange Juice,150,Drinks
+20,Samosas 4pc,120,Snacks
+21,Spring Rolls,150,Snacks
+22,French Fries,180,Snacks
+23,Loaded Nachos,220,Snacks
+24,Zinger Burger Deal,750,Specials,15,15% Off Today
+25,Family Biryani Combo,1500,Specials,20,20% Discount
+26,Pizza Meal Deal,1200,Specials,10,Students Special
