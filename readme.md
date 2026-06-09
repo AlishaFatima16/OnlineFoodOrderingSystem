@@ -136,7 +136,7 @@ This project was built as an academic exercise, but the plan is to evolve it int
 
 ## 👨‍💻 Author
 
-Built by a CS student as a 2nd Semester OOP final project — graded and encouraged by the instructor to evolve into a real-world application.
+Built by ME as a 2nd Semester OOP final project — graded and encouraged by the instructor to evolve into a real-world application.
 
 ---
 
