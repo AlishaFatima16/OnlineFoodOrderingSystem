@@ -1,18 +1,18 @@
-# 🍔 Online Food Ordering System
+#  Online Food Ordering System
 
 A desktop-based food ordering application built with **C++ and Qt**, developed as a second-semester Object-Oriented Programming project. The system simulates a real-world food ordering experience with separate customer and admin interfaces, persistent file-based storage, and a polished UI styled with QSS.
 
 ---
 
-## 📸 Overview
+##  Overview
 
 The application launches with a login screen and routes users to either the **Customer Dashboard** or the **Admin Panel** based on their role. Customers can browse a categorized menu, add items to their cart, apply discounts, and place orders — all within a smooth, modern interface. Admins can manage the entire menu and view all orders in real time.
 
 ---
 
-## ✨ Features
+##  Features
 
-### 👤 Customer Side
+###  Customer Side
 - **User Registration & Login** — Secure account creation with username, password, email, and phone
 - **Categorized Menu** — Browse items across Burgers, Pizza, Desi, Rice, Drinks, Snacks, and Specials
 - **Search & Sort** — Real-time search bar + sort by price or popularity
@@ -24,7 +24,7 @@ The application launches with a login screen and routes users to either the **Cu
 - **Order Placement & History** — Place orders and view past orders at any time
 - **Recommendations Panel** — A dedicated section in the cart panel suggesting items
 
-### 🔐 Admin Side
+###  Admin Side
 - **Secure Admin Login** — Role-based access separates admin from customer accounts
 - **Menu Management** — Add, edit, and delete menu items from a live table view
 - **Order Viewer** — See all customer orders placed across the system
@@ -32,7 +32,7 @@ The application launches with a login screen and routes users to either the **Cu
 
 ---
 
-## 🏗️ OOP Concepts Applied
+##  OOP Concepts Applied
 
 This project was built to demonstrate core OOP principles:
 
@@ -46,7 +46,7 @@ This project was built to demonstrate core OOP principles:
 
 ---
 
-## 🗂️ Project Structure
+##  Project Structure
 
 ```
 OnlineFoodOrderingSystem/
@@ -73,7 +73,7 @@ OnlineFoodOrderingSystem/
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Language:** C++ (C++17)
 - **Framework:** Qt 6.11 (Widgets, Network)
@@ -84,7 +84,7 @@ OnlineFoodOrderingSystem/
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - Qt 6.x installed ([qt.io/download](https://www.qt.io/download))
@@ -107,7 +107,7 @@ Password: admin123
 
 ---
 
-## 📋 Sample Menu Categories
+##  Sample Menu Categories
 
 | Category | Example Items |
 |---|---|
@@ -121,7 +121,7 @@ Password: admin123
 
 ---
 
-## 🔮 Future Roadmap
+## Future Roadmap
 
 This project was built as an academic exercise, but the plan is to evolve it into a real-world application. Upcoming improvements include:
 
@@ -134,7 +134,7 @@ This project was built as an academic exercise, but the plan is to evolve it int
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 Built by ME as a 2nd Semester OOP final project — graded and encouraged by the instructor to evolve into a real-world application.
 
