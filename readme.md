@@ -1,145 +1,238 @@
-#  Online Food Ordering System
+# 🍔 Online Food Ordering System
 
-A desktop-based food ordering application built with **C++ and Qt**, developed as a second-semester Object-Oriented Programming project. The system simulates a real-world food ordering experience with separate customer and admin interfaces, persistent file-based storage, and a polished UI styled with QSS.
+> A modern desktop-based food ordering application built with **C++ and Qt**.
 
----
+The **Online Food Ordering System** is a desktop application that simulates a complete food ordering experience with separate interfaces for customers and administrators. Users can browse menus, manage carts, apply discounts, and place orders, while administrators can manage menu items and monitor orders.
 
-##  Overview
-
-The application launches with a login screen and routes users to either the **Customer Dashboard** or the **Admin Panel** based on their role. Customers can browse a categorized menu, add items to their cart, apply discounts, and place orders — all within a smooth, modern interface. Admins can manage the entire menu and view all orders in real time.
+Developed as a **second-semester Object-Oriented Programming (OOP) project**, the application focuses on applying core OOP principles to a practical, real-world system while delivering a polished user interface using Qt and QSS.
 
 ---
 
-##  Features
+## ✨ Features
 
-###  Customer Side
-- **User Registration & Login** — Secure account creation with username, password, email, and phone
-- **Categorized Menu** — Browse items across Burgers, Pizza, Desi, Rice, Drinks, Snacks, and Specials
-- **Search & Sort** — Real-time search bar + sort by price or popularity
-- **Food Cards with Images** — Dynamically loaded food images fetched over the network (`QNetworkAccessManager`)
-- **Item Detail View** — Click any item to see full details before adding to cart
-- **Shopping Cart** — Add/remove items, view subtotal, tax breakdown, and grand total
-- **Special Deals & Discounts** — `SpecialMenuItem` supports percentage-based discounts with custom offer labels
-- **Persistent Cart** — Cart is saved to file and restored on next login
-- **Order Placement & History** — Place orders and view past orders at any time
-- **Recommendations Panel** — A dedicated section in the cart panel suggesting items
+### 👤 Customer Features
 
-###  Admin Side
-- **Secure Admin Login** — Role-based access separates admin from customer accounts
-- **Menu Management** — Add, edit, and delete menu items from a live table view
-- **Order Viewer** — See all customer orders placed across the system
-- **Real-time Stats** — Dashboard header displays current menu item count
+- 🔐 **Registration & Login** — Create and manage customer accounts
+- 🍔 **Categorized Menu** — Browse Burgers, Pizza, Desi, Rice, Drinks, Snacks, and Specials
+- 🔎 **Search & Sort** — Search menu items and sort by price or popularity
+- 🖼️ **Dynamic Food Images** — Load food images using `QNetworkAccessManager`
+- 📋 **Item Details** — View detailed information before adding items to the cart
+- 🛒 **Shopping Cart** — Add or remove items and view subtotal, tax, and total
+- 🏷️ **Special Deals & Discounts** — Percentage-based discounts with custom offer labels
+- 💾 **Persistent Cart** — Cart data is saved and restored between sessions
+- 📦 **Order Placement** — Place orders directly through the application
+- 🕒 **Order History** — View previously placed orders
+- 💡 **Recommendations** — Suggested items displayed within the cart
+
+### 🛠️ Admin Features
+
+- 🔐 **Role-Based Access** — Separate administrator and customer access
+- ➕ **Menu Management** — Add new food items
+- ✏️ **Edit Menu Items** — Update existing menu information
+- 🗑️ **Delete Menu Items** — Remove items from the menu
+- 📦 **Order Management** — View customer orders across the system
+- 📊 **Live Statistics** — Monitor the current number of menu items
 
 ---
 
-##  OOP Concepts Applied
+## 🧠 Object-Oriented Programming Concepts
 
-This project was built to demonstrate core OOP principles:
+The project demonstrates several core **Object-Oriented Programming principles**:
 
-| Concept | Where It's Used |
+| Concept | Implementation |
 |---|---|
-| **Encapsulation** | All classes expose data only through getters/setters; internal state is private/protected |
-| **Inheritance** | `Customer` and `Admin` both inherit from `User`; `SpecialMenuItem` inherits from `MenuItem` |
-| **Polymorphism** | `showDashboard()` and `getInfo()` are overridden in `Customer` and `Admin`; `getFinalPrice()` and `getDisplayInfo()` are overridden in `SpecialMenuItem` |
-| **Abstraction** | `User` is an abstract class with pure virtual methods (`showDashboard()`, `getInfo()`) |
-| **File I/O** | `FileHandler` class handles all persistent storage (menu, users, orders, cart) through flat `.txt` files |
+| **Encapsulation** | Class data is protected using private/protected members and accessed through getters and setters |
+| **Inheritance** | `Customer` and `Admin` inherit from `User`; `SpecialMenuItem` inherits from `MenuItem` |
+| **Polymorphism** | Virtual methods such as `showDashboard()` and `getInfo()` are overridden by derived classes |
+| **Abstraction** | `User` serves as an abstract base class with pure virtual functions |
+| **File I/O** | `FileHandler` manages persistent storage for users, menus, carts, and orders |
 
 ---
 
-##  Project Structure
+## 🏗️ System Architecture
 
+```text
+                    ┌───────────────┐
+                    │     User      │
+                    │ Abstract Base │
+                    └───────┬───────┘
+                            │
+              ┌─────────────┴─────────────┐
+              │                           │
+        ┌─────▼─────┐               ┌─────▼─────┐
+        │ Customer  │               │   Admin   │
+        └───────────┘               └───────────┘
+
+
+                    ┌───────────────┐
+                    │   MenuItem    │
+                    └───────┬───────┘
+                            │
+                    ┌───────▼────────┐
+                    │SpecialMenuItem │
+                    │   Discounts    │
+                    └────────────────┘
 ```
+
+---
+
+## 📂 Project Structure
+
+```text
 OnlineFoodOrderingSystem/
+│
 ├── data/
-│   ├── menu.txt          # Persistent menu items
-│   ├── users.txt         # Registered user accounts
-│   ├── orders.txt        # Order history
-│   └── cart.txt          # Saved cart state
+│   ├── menu.txt              # Menu data
+│   ├── users.txt             # Registered users
+│   ├── orders.txt            # Order history
+│   └── cart.txt              # Saved cart state
+│
 └── OnlineFoodOrderingSystem/
-    ├── main.cpp              # App entry point, global stylesheet
-    ├── user.h / .cpp         # Abstract base User class
-    ├── customer.h / .cpp     # Customer subclass
-    ├── admin.h / .cpp        # Admin subclass
-    ├── menuitem.h / .cpp     # Base menu item class
-    ├── specialmenuitem.h/.cpp# Discounted/special items (inherits MenuItem)
-    ├── cart.h / .cpp         # Shopping cart logic
-    ├── order.h / .cpp        # Order model
-    ├── filehandler.h / .cpp  # All file read/write operations
-    ├── loginwindow.h / .cpp  # Login & registration UI
-    ├── customerwindow.h/.cpp # Full customer dashboard UI
-    ├── adminwindow.h / .cpp  # Admin panel UI
-    └── style.qss             # QSS stylesheet
+    ├── main.cpp
+    ├── user.h / user.cpp
+    ├── customer.h / customer.cpp
+    ├── admin.h / admin.cpp
+    ├── menuitem.h / menuitem.cpp
+    ├── specialmenuitem.h / specialmenuitem.cpp
+    ├── cart.h / cart.cpp
+    ├── order.h / order.cpp
+    ├── filehandler.h / filehandler.cpp
+    ├── loginwindow.h / loginwindow.cpp
+    ├── customerwindow.h / customerwindow.cpp
+    ├── adminwindow.h / adminwindow.cpp
+    └── style.qss
 ```
 
 ---
 
-##  Tech Stack
+## 🛠️ Tech Stack
 
-- **Language:** C++ (C++17)
-- **Framework:** Qt 6.11 (Widgets, Network)
-- **IDE:** Qt Creator
-- **Build System:** QMake
-- **Storage:** Plain text files (no database)
-- **Platform:** Windows (built & tested with MinGW 64-bit)
+| Technology | Usage |
+|---|---|
+| **C++17** | Core application logic |
+| **Qt 6.11** | Desktop application framework |
+| **Qt Widgets** | User interface components |
+| **Qt Network** | Dynamic image loading |
+| **QSS** | Application styling |
+| **QMake** | Build system |
+| **Text Files** | Persistent data storage |
+| **MinGW 64-bit** | Compiler |
 
 ---
 
-##  Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
-- Qt 6.x installed ([qt.io/download](https://www.qt.io/download))
-- MinGW 64-bit compiler (bundled with Qt)
 
-### Run the Project
+- Qt 6.x
+- Qt Creator
+- MinGW 64-bit Compiler
 
-1. Clone or download the repository
-2. Open `OnlineFoodOrderingSystem.pro` in **Qt Creator**
-3. Select the **Desktop Qt 6 MinGW 64-bit** kit
-4. Click **Run** (▶)
+### Installation
 
-The `data/` folder is created automatically on first launch. A default admin account is seeded if no users file exists.
+Clone the repository:
 
-### Default Admin Credentials
+```bash
+git clone https://github.com/AlishaFatima16/OnlineFoodOrderingSystem.git
+cd OnlineFoodOrderingSystem
 ```
+
+Then:
+
+1. Open `OnlineFoodOrderingSystem.pro` in **Qt Creator**
+2. Select the **Desktop Qt 6 MinGW 64-bit** kit
+3. Build the project
+4. Click **Run ▶**
+
+The `data/` directory will be created automatically on the first launch.
+
+---
+
+## 🔑 Default Admin Account
+
+If no user data exists, the application automatically creates a default administrator account.
+
+```text
 Username: admin
 Password: admin123
 ```
 
+> ⚠️ These credentials are intended for demonstration purposes only.
+
 ---
 
-##  Sample Menu Categories
+## 🍽️ Menu Categories
 
 | Category | Example Items |
 |---|---|
-| 🍔 Burgers | Spicy Chicken Burger, Double Smash Burger |
-| 🍕 Pizza | Lahori Pizza, BBQ Chicken Pizza |
-| 🍛 Desi | Chicken Biryani, Beef Nihari, Daal Makhni |
-| 🍚 Rice | Chicken Fried Rice, Vegetable Pulao |
-| 🥤 Drinks | Cold Coffee, Mango Shake, Doodh Pati Chai |
-| 🍟 Snacks | Samosas, Spring Rolls, Loaded Nachos |
-| ⭐ Specials | Zinger Burger Deal (15% off), Family Biryani Combo (20% off) |
+| 🍔 **Burgers** | Spicy Chicken Burger, Double Smash Burger |
+| 🍕 **Pizza** | Lahori Pizza, BBQ Chicken Pizza |
+| 🍛 **Desi** | Chicken Biryani, Beef Nihari, Daal Makhni |
+| 🍚 **Rice** | Chicken Fried Rice, Vegetable Pulao |
+| 🥤 **Drinks** | Cold Coffee, Mango Shake, Doodh Pati Chai |
+| 🍟 **Snacks** | Samosas, Spring Rolls, Loaded Nachos |
+| ⭐ **Specials** | Zinger Burger Deal, Family Biryani Combo |
 
 ---
 
-## Future Roadmap
+## 💾 Data Persistence
 
-This project was built as an academic exercise, but the plan is to evolve it into a real-world application. Upcoming improvements include:
+The application uses file-based storage to persist application data.
 
-- [ ] **AI-Powered Recommendations** — Integrate an AI model to suggest items based on order history and preferences
-- [ ] **AI Ratings & Reviews** — Smart sentiment analysis on customer feedback
-- [ ] **Database Integration** — Replace flat files with SQLite or a cloud database
-- [ ] **Cross-Platform UI** — Improve compatibility across Windows, macOS, and Linux
-- [ ] **Payment Gateway Simulation** — Add a checkout flow with payment options
-- [ ] **Real-time Order Tracking** — Status updates from "Preparing" → "On the Way" → "Delivered"
+```text
+data/
+│
+├── users.txt      → User accounts
+├── menu.txt       → Menu items
+├── orders.txt     → Order history
+└── cart.txt       → Saved shopping carts
+```
+
+All file operations are managed through the `FileHandler` class.
 
 ---
 
-##  Author
+## 🔮 Future Improvements
 
-Built by ME as a 2nd Semester OOP final project — graded and encouraged by the instructor to evolve into a real-world application.
+- 🤖 **AI-Powered Recommendations** — Personalized food suggestions based on order history and preferences
+- ⭐ **Smart Ratings & Reviews** — Sentiment analysis for customer feedback
+- 🗄️ **Database Integration** — Replace flat files with SQLite, PostgreSQL, or a cloud database
+- 💳 **Payment Integration** — Add a simulated checkout and payment workflow
+- 🚚 **Real-Time Order Tracking** — Track orders from preparation to delivery
+- 🌐 **Cross-Platform Support** — Improve compatibility across Windows, macOS, and Linux
+
+---
+
+## 🎓 What I Learned
+
+Through this project, I gained practical experience with:
+
+- Object-Oriented Programming in C++
+- Class design and relationships
+- Inheritance and polymorphism
+- Abstract classes and virtual functions
+- File handling and data persistence
+- Qt Widgets and desktop application development
+- Network requests using Qt
+- User interface design with QSS
+- Building a complete application from requirements to implementation
+
+---
+
+## 👩‍💻 Author
+
+**Alisha Fatima**
+
+Built as a **second-semester Object-Oriented Programming final project**.
+
+The project was graded and encouraged by the instructor to further develop it into a real-world application.
+
+⭐ If you found this project interesting, consider giving the repository a star!
 
 ---
 
 ## 📄 License
 
-This project is open for learning and educational purposes. Feel free to fork, explore, and build on it.
+This project is open for **learning and educational purposes**.
+
+Feel free to explore, fork, and build upon it.
